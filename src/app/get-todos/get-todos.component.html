@@ -1,0 +1,36 @@
+<section style="padding-bottom: 85vh" class="m-3">
+    <form (submit)="getTodos()">
+        <div class="mb-3">
+            <input type="number" [(ngModel)]="userId" name="userId" class="form-control" placeholder="UserID" min="1"
+                max="5" />
+        </div>
+        <button class="btn btn-success d-block w-100" type="submit" value="Register">
+            Get Todos
+        </button>
+    </form>
+    <table class="table table-light table-bordered table-hover table-striped table-responsive-sm">
+        <thead class="thead-light">
+            <tr>
+                <th colspan="7">
+                    <h2>Todos</h2>
+                </th>
+            </tr>
+            <tr>
+                <th scope="col"></th>
+                <th scope="col">UserID</th>
+                <th scope="col">ID</th>
+                <th scope="col">Title</th>
+                <th scope="col">Completed</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let todo of todos | async; index as i">
+                <th scope="row">{{ i + 1 }}</th>
+                <td>{{ todo.userId }}</td>
+                <td>{{ todo.id }}</td>
+                <td>{{ todo.title }}</td>
+                <td>{{ todo.completed }}</td>
+            </tr>
+        </tbody>
+    </table>
+</section>
