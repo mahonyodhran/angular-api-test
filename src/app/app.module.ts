@@ -5,11 +5,16 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
+import { GetTodosComponent } from './get-todos/get-todos.component';
+import { LandingComponent } from './landing/landing.component';
 
-const appRoutes: Routes = [{ path: '', component: AppComponent }];
+const appRoutes: Routes = [
+  { path: '', component: LandingComponent },
+  { path: 'get-todos', component: GetTodosComponent },
+];
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, GetTodosComponent, LandingComponent],
   imports: [
     BrowserModule,
     HttpClientModule,
