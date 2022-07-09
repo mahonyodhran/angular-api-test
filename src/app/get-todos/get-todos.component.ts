@@ -17,10 +17,15 @@ export class GetTodosComponent implements OnInit {
   todos: Observable<any>;
 
   getTodos() {
-    let params = new HttpParams().set('userId', this.userId);
     let headers = new HttpHeaders().set('Authorization', 'auth-token');
 
-    this.todos = this.http.get(this.ROOT_URL + '/todos', { params, headers });
+    if (this.userId == 0) {
+      //get all the users
+      this.todos = this.http.get(this.ROOT_URL + '/todos', { headers });
+    } else {
+      let params = new HttpParams().set('userId', this.userId);
+      this.todos = this.http.get(this.ROOT_URL + '/todos', { params, headers });
+    }
   }
 
   ngOnInit(): void {}

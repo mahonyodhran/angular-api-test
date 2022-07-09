@@ -2,7 +2,7 @@
     <form (submit)="getTodos()">
         <div class="mb-3" style="width:10%">
             <input type="number" [(ngModel)]="userId" name="userId" class="form-control me-2" placeholder="UserID"
-                min="1" max="5" />
+                min="0" max="5" />
             <br>
             <button class="btn btn-success d-block w-100" type="submit" value="Submit">
                 Get Todos
