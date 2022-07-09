@@ -7,6 +7,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { GetTodosComponent } from './get-todos/get-todos.component';
 import { LandingComponent } from './landing/landing.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 const appRoutes: Routes = [
   { path: '', component: LandingComponent },
@@ -14,7 +15,7 @@ const appRoutes: Routes = [
 ];
 
 @NgModule({
-  declarations: [AppComponent, GetTodosComponent, LandingComponent],
+  declarations: [AppComponent, GetTodosComponent, LandingComponent, NavbarComponent],
   imports: [
     BrowserModule,
     HttpClientModule,
